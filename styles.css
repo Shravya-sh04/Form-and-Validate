@@ -1,0 +1,211 @@
+/* Color Palette & Custom Properties */
+:root {
+    --bs-primary: #d4a373;
+    --bs-primary-rgb: 212, 163, 115;
+    --bs-primary-hover: #c09060;
+    --bs-dark: #1f2022;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #4a4a4a;
+}
+
+.title-font {
+    font-family: 'Playfair Display', serif;
+}
+
+.tracking-wider {
+    letter-spacing: 0.1em;
+}
+
+.line-height-lg {
+    line-height: 1.8;
+}
+
+.max-w-700 {
+    max-width: 700px;
+}
+
+/* Custom Primary Overrides */
+.text-primary { color: var(--bs-primary) !important; }
+.bg-primary { background-color: var(--bs-primary) !important; }
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: white;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: var(--bs-primary-hover) !important;
+    border-color: var(--bs-primary-hover) !important;
+    color: white !important;
+}
+
+.btn-outline-primary {
+    color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+.btn-outline-primary:hover {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: white;
+}
+
+.hover-primary:hover {
+    color: var(--bs-primary) !important;
+    opacity: 1 !important;
+}
+
+.transition {
+    transition: all 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: all 0.4s ease;
+}
+
+.navbar.navbar-scrolled {
+    background-color: rgba(31, 32, 34, 0.98) !important;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    position: relative;
+    padding: 0.5rem 1rem;
+    margin: 0 0.2rem;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: white;
+}
+
+.navbar-dark .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--bs-primary);
+    transition: width 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover::after,
+.navbar-dark .navbar-nav .nav-link.active::after {
+    width: 60%;
+}
+
+@media (max-width: 991.98px) {
+    .navbar {
+        background-color: rgba(31, 32, 34, 0.98) !important;
+    }
+    .navbar-collapse {
+        padding: 1rem 0;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&q=80&w=2070') center/cover no-repeat fixed;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -1px;
+}
+
+.hero-subtitle {
+    font-weight: 300;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* About Section */
+.experience-badge {
+    width: 120px;
+    height: 120px;
+    bottom: -20px;
+    right: -20px;
+    border: 5px solid white;
+}
+
+/* Menu Section */
+.divider {
+    width: 60px;
+    height: 3px;
+    border-radius: 3px;
+}
+
+.nav-pills .nav-link {
+    color: #4a4a4a;
+    font-weight: 600;
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--bs-primary);
+    color: white;
+}
+
+.card-img-wrapper {
+    overflow: hidden;
+}
+
+.card-img-wrapper img {
+    transition: transform 0.6s ease;
+}
+
+.menu-card:hover .card-img-wrapper img {
+    transform: scale(1.08);
+}
+
+.menu-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* Form Controls */
+.form-control:focus, .form-select:focus {
+    border-color: var(--bs-primary) !important;
+    box-shadow: 0 0 0 0.25rem rgba(212, 163, 115, 0.25) !important;
+    background-color: white !important;
+}
+
+/* Footer */
+.social-btn {
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    transform: translateY(-3px);
+}
